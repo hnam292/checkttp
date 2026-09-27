@@ -183,7 +183,12 @@ export default function VoucherTerminal() {
     if (!email.trim() || !pin.trim()) return toast.error("Vui lòng nhập email và mã PIN.");
     setBusy(true);
     try {
-      const r = await callApi({ action: "loginAdmin", email: email.trim(), pin: pin.trim() });
+      const r = await callApi({
+        action: "loginStaff",
+        email: email.trim(),
+        pin: pin.trim(),
+        deviceInfo: navigator.userAgent,
+      });
       if (!isOk(r)) throw new Error(r.error || r.message || "Thông tin đăng nhập không đúng.");
       const data = (r.data || r) as ApiResult;
       const token = data.adminToken || data.token;

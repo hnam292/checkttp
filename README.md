@@ -2,6 +2,13 @@
 
 Website dành riêng cho nhân viên AHT đăng nhập, quét QR, tra cứu và xác nhận voucher Touch to Play.
 
+Phiên bản 1.3:
+
+- Đăng nhập bằng tài khoản và PIN riêng của từng nhân viên.
+- Chỉ chấp nhận vai trò `LOUNGE_STAFF`, `SUPERVISOR` hoặc `ADMIN`.
+- Không dùng chung PIN quản trị; backend ghi nhận chính xác người xác nhận voucher.
+- Yêu cầu backend Touch to Play phiên bản 2.4.0 trở lên.
+
 Phiên bản 1.2:
 
 - Sửa nút chọn ảnh QR để Android và iOS mở thư viện ảnh thay vì bị ép chụp ảnh mới.
@@ -60,6 +67,6 @@ Không cần khai báo biến môi trường ở phiên bản hiện tại. API 
 ## Lưu ý
 
 - Website triển khai phải dùng HTTPS để camera hoạt động.
-- Tài khoản nhân viên vẫn được xác thực bởi backend Touch to Play.
+- Tài khoản nhân viên và PIN cá nhân được xác thực bởi backend Touch to Play.
 - Không lưu email, PIN hoặc token đăng nhập trong mã nguồn.
 - Voucher chỉ chuyển sang đã sử dụng sau khi nhân viên bấm xác nhận.
